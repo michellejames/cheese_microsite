@@ -11,10 +11,18 @@ TABLE OF CONTENTS:
 
 ==============================================
 */
+$blue: #6C8EA4;
+$orange: #ED8B32;
+
+@font-face {
+  font-family: 'Southpark';
+  src: url('../../dist/fonts/south-park.ttf')  format('truetype'),
+}
 
 @import 'reset';
 @import "loading";
-@import "pulsating";
+@import "page2";
+
 
 
 /* 1. Main Layout ================================= */
@@ -24,115 +32,204 @@ TABLE OF CONTENTS:
 }
 
 body {
-	background-image: url(../../src/img/background.png);
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../../dist/img/background.png);
 	background-repeat: no-repeat;
-	width: 100%;
-	height: 100%;
+	background-size: cover;
+	overflow: hidden;
 }
 
-nav {
+.title {
 	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
-	margin-top: 20px;
-	margin-left: 20px;
+	width: 80%;
+	height: 56.01503759%;
+	margin-top: 16.39097744%;
+	margin-left: 8.133333333%;
 
-	.logo {
-		background-image: url(../../src/img/logo.png);
-		background-repeat: no-repeat;
-		width: 50px;
-		height: 50px;
-		background-size: contain;
-	}
+	.combined-logo {
 
-	.menu {
-		display: flex;
-		display: space-between;
-		margin-left: 50px;
+		width: 80%;
+		height: 35.93984962%;
+		position: relative;
 
-		& li {
-			margin: 0px 10px;
+		.cheese-logo {
+			background-image: url(../../dist/img/Mobile/Mobile_Pieces/CheeseWheel_BlueShadow.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			//position: absolute;
+			//top: 18.19548872%;
+			//left: 11.46666667%;
+			//width: 40%;
+			width: 49.66666667%;
+			height: 0;
+			//padding-bottom: 19.54887218%;
+			padding-bottom: 19.32330827%;
 		}
 
-	}
-}
-
-h1, h2 {
-	position: absolute;
-	top: 20%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 2.5rem;
-	background: rgba(235, 52, 46, 1);
-	width: 60%;
-	text-align: center;
-	padding: 5px 0;
-}
-
-h2 {
-	top: 30%;
-	font-size: 2rem;
-}
-
-footer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	top: 90%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	.cheese-container {
-		width: 200px;
-		height: 100px;
-		background: red;
+		.word-logo {
+			background-image: url(../../dist/img/Desktop/MiscPieces/matcharella_large.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: absolute;
+			z-index: 5;
+			// top: 18.87218045%;
+			// left: 21.33333333%;
+			//width: 66.66666667%;
+			left: 15%;
+			bottom: 0;
+			width: 84.83333333%;
+			height: 0;
+			//padding-bottom: 33.83458647%;
+			//padding-bottom: 56.834586%;
+			padding-bottom: 95.16806723%;
+			transform: rotate(-15deg);
+		}
 	}
 
-	.social-media {
-		background-image: url(../../src/img/logo.png);
+
+	.from {
+		//position: absolute;
+		font-family: 'Southpark';
+		//font-size: 2.25rem;
+		font-size: 1.25rem;
+		color: $blue;
+		//text-align: center;
+		//top: 53.60902256%;
+		//left: 50%;
+		//transform: translate(-50%, -50%);
+	}
+
+	.company-logo {
+		background-image: url(../../dist/img/Mobile/Mobile_Pieces/Blue_Logo.png);
 		background-repeat: no-repeat;
-		width: 50px;
-		height: 50px;
-		background-size: contain;
-		margin-left: auto;
+		background-size: cover;
+		//position: absolute;
+		//top: 57.7443609%;
+		//left: 37.86666667%;
+		width: 26%;
+		height: 0;
+		//padding-bottom: 14.66165414%;
+		padding-bottom: 26.161654%;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .cloud {
-	position: relative;
-	width: 200px;
-	height: 40px;
+	position: absolute;
+	width: 23.6%;
+	height: 0;
+	//padding-bottom: 3.383458647%;
+	padding-bottom: 8.383459%;
 	border-radius: 20px;
 	background: linear-gradient(to bottom, rgba(255, 255 ,255, 1), rgba(255,255, 255, 0));
 }
 
 .cloud1 {
-	width: 50px;
-	height: 20px;
+	width: 23.6%;
+	top: 5%;
+	left: 93%;
 }
 
 .cloud2 {
-	width: 80px;
-	height: 20px;
+	width: 13.6%;
+	top: 7%;
+	left: 95%;
 }
 
 .cloud3 {
-	width: 200px;
+	width: 33.6%;
+	top: 10%;
+	left: 90%;
 }
 
 .cloud4 {
-	width: 130px;
+	width: 23.6%;
+	top: 14%;
+	left: 93%;
 }
 
 .cloud5 {
-	width: 20px;
+	width: 23.6%;
+	top: 21%;
+	left: 9%;
 }
 
 .cloud6 {
-	width: 220px;
+	width: 33.6%;
+	top: 24%;
+	left: -2%;
 }
 
+.cloud7 {
+	width: 23.6%;
+	top: 21%;
+	left: 9%;
+}
+
+.cloud8 {
+	width: 23.6%;
+    top: 27%;
+    left: 56%;
+}
+
+.cloud9 {
+	width: 27.6%;
+    top: 29%;
+    left: 65%;
+}
+
+.cloud10 {
+	width: 27.6%;
+    top: 41%;
+    left: 29%;
+}
+
+.cloud11 {
+	width: 37.6%;
+	top: 44.3%;
+	left: 22%;
+}
+
+.cloud12 {
+	width: 19.6%;
+    top: 49%;
+    left: 28%;
+    padding-bottom: 6%;
+}
+
+.cloud13 {
+	width: 19.6%;
+    top: 57%;
+    left: -6%;
+}
+
+.cloud14 {
+	width: 27.6%;
+    top: 59%;
+    left: -6%;
+}
+
+.cloud15 {
+	width: 19.6%;
+    top: 60%;
+    left: -9%;
+}
 
 
 

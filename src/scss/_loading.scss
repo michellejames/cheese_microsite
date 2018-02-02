@@ -1,25 +1,29 @@
 #progressbar{
-  height: 35px;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 200px;
+  bottom: 14.88721805%;
+  left: 12%;
+  width: 72.4%;
+  height: 0;
+  //padding-bottom: 3.759398496%;
+  padding-bottom: 6.759398%;
   //background: rgba(159, 159, 159, 0.5);
   background: transparent;
-  border: 4px solid #fff;
+  border: 3px solid #fff;
   border-radius: 10px;
-  margin: -20px 0 0 -100px;
-  padding: 2px;
+  // margin: -20px 0 0 -100px;
+  // padding: 2px;
 }
 #loading{
-  transition: all 500ms ease;
-  height: 20px;
-  width: calc(100% - 10px);
-  border-radius: 8px;
-  background: rgb(239, 140, 3);
   position: absolute;
+  height: 0;
+  //padding-bottom: 3.759398496%;
+  padding-bottom: 6.759398%;
+  width: calc(100% - 10px);
+  border-radius: 10px;
+  background: $orange;
   margin: 3px;
   display: inline-block;
+  transition: all 500ms ease;
   animation: load 3s ease infinite;
 }
 #load{
