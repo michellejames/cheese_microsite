@@ -1,0 +1,258 @@
+.cloud {
+	position: absolute;
+	width: 23.6%;
+	height: 5.533835%;
+	//height: 40px;
+	border-radius: 20px;
+	background: linear-gradient(to bottom, rgba(255, 255 ,255, 1), rgba(255,255, 255, 0));
+
+	@media screen and (min-width: 600px) {
+		width: 20.49780381%;
+	}
+}
+
+.cloud1 {
+	width: 23.6%;
+	top: 5%;
+	left: 93%;
+
+	@media screen and (min-width: 600px) {
+		width: 20.49780381%;
+		top: -1%;
+		left: 62.22547584%;
+	}
+}
+
+.cloud2 {
+	width: 13.6%;
+	top: 7%;
+	left: 95%;
+
+	@media screen and (min-width: 600px) {
+		width: 24.89019034%;
+		top: 2.604166667%;
+		left: 57.83308931%;
+	}
+}
+
+.cloud3 {
+	width: 33.6%;
+	top: 10%;
+	left: 90%;
+
+	@media screen and (min-width: 600px) {
+		width: 12.44509517%;
+		top: 7.8125%;
+		left: 60.39531479%;
+	}
+}
+
+.cloud4 {
+	width: 23.6%;
+	top: 14%;
+	left: 93%;
+
+	@media screen and (min-width: 600px) {
+		width: 12.44509517%;
+		top: 8.8125%;
+		left: 79.79502196%;
+	}
+}
+
+.cloud5 {
+	width: 23.6%;
+	top: 21%;
+	left: 9%;
+
+	@media screen and (min-width: 600px) {
+		width: 12.81112738%;
+		top: 11.71875%;
+		left: 12.95754026%;
+	}
+}
+
+.cloud6 {
+	width: 33.6%;
+	top: 24%;
+	left: -2%;
+
+	@media screen and (min-width: 600px) {
+		width: 21.22986823%;
+		top: 14.97395833%;
+		left: 3.660322108%;
+	}
+}
+
+.cloud7 {
+	width: 23.6%;
+	top: 21%;
+	left: 9%;
+
+	@media screen and (min-width: 600px) {
+		width: 12.81112738%;
+		top: 16.92708333%;
+		left: 14.64128843%;
+	}
+}
+
+.cloud8 {
+	width: 23.6%;
+    top: 27%;
+    left: 56%;
+
+    @media screen and (min-width: 600px) {
+    	width: 13.17715959%;
+    	top: 23.4375%;
+    	left: 39.53147877%;
+    }
+}
+
+.cloud9 {
+	width: 27.6%;
+    top: 29%;
+    left: 65%;
+
+    @media screen and (min-width: 600px) {
+    	width: 13.17715959%;
+    	top: 26.953125%;
+    	left: 44.65592972%;
+    }
+}
+
+.cloud10 {
+	width: 27.6%;
+    top: 41%;
+    left: 29%;
+
+    @media screen and (min-width: 600px) {
+    	width: 12.95754026%;
+    	top: 47.52604167%;
+    	left: 27.81844802%;
+    }
+}
+
+.cloud11 {
+	width: 37.6%;
+	top: 44.3%;
+	left: 22%;
+
+	@media screen and (min-width: 600px) {
+		width: 22.32796486%;
+		top: 52.08333333%;
+		left: 20.86383602%;
+	}	
+}
+
+.cloud12 {
+	width: 19.6%;
+    top: 49%;
+    left: 28%;
+
+    @media screen and (min-width: 600px) {
+    	width: 12.81112738%;
+    	top: 57.29166667%;
+    	left: 24.15812592%;
+    }
+}
+
+.cloud13 {
+	width: 19.6%;
+    top: 57%;
+    left: -6%;
+
+    @media screen and (min-width: 600px) {
+    	width: 12.81112738%;
+    	top: 49.47916667%;
+    	left: 83.45534407%;
+    }
+}
+
+.cloud14 {
+	width: 27.6%;
+    top: 59%;
+    left: -6%;
+
+    @media screen and (min-width: 600px) {
+    	width: 21.96193265%;
+    	top: 54.6875%;
+    	left: 80.16105417%;
+    }
+}
+
+.cloud15 {
+	width: 19.6%;
+    top: 60%;
+    left: -9%;
+
+    @media screen and (min-width: 600px) {
+    	width: 7.320644217%;
+    	top: 59.19791667%;
+    	left: 94.4363104%;
+    } 
+}
+
+.cloud16 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 72.265625%;
+    	left: 3.660322108%;
+    } 
+}
+
+.cloud17 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 75.52083333%;
+    	left: -1.660322108%;
+    } 
+}
+
+.cloud18 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 75.52083333%;
+    	left: 7.320644217%;
+    } 
+}
+
+.cloud19 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 78.125%;
+    	left: 3.660322108%;
+    } 
+}
+
+.cloud20 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 74.21875%;
+    	left: 83.45534407%;
+    } 
+}
+
+.cloud21 {
+	display: none;
+
+    @media screen and (min-width: 600px) {
+    	display: block;
+    	width: 12.81112738%;
+    	top: 83.33333333%;
+    	left: 71.0102489%;
+    } 
+}

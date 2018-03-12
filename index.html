@@ -14,6 +14,7 @@
 	</head>
 	<body>
 	
+	<div class="clouds">
 		<div class="cloud cloud1"></div>
 		<div class="cloud cloud2"></div>
 		<div class="cloud cloud3"></div>
@@ -29,7 +30,15 @@
 		<div class="cloud cloud13"></div>
 		<div class="cloud cloud14"></div>
 		<div class="cloud cloud15"></div>
+		<div class="cloud cloud16"></div>
+		<div class="cloud cloud17"></div>
+		<div class="cloud cloud18"></div>
+		<div class="cloud cloud19"></div>
+		<div class="cloud cloud20"></div>
+		<div class="cloud cloud21"></div>
+	</div>
 
+	<section class="loading-screen">
 		<div class="title">
 			<section class="combined-logo">
 				<div class="cheese-logo"></div>
@@ -41,10 +50,180 @@
 
 		<div id="progressbar">
 		  <span id="loading"></span>
-		  <!-- <div id="load">Loading ...</div> -->
+		</div>
+	</section>
+
+	<section class="game-setup" id="scene">
+		<div class="layer">
+			<div class="company-logo2"></div>
+		</div>
+		<div class="layer city-bottom-layer" data-depth="0.1">
+			<div class="city-bottom"></div>
+		</div>
+		<div class="layer town-layer" data-depth="0.1">
+			<div class="town"></div>
+		</div>
+		<div class="layer" data-depth="0.1">
+			<div class="road"></div>
+		</div>
+		<div class="layer">
+			<div class="mouse"></div>
 		</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+		<div class="layer wave-layer" data-depth="0.3">
+			<img class="wave-1" src="dist/img/Mobile/WaveLayer/wave4.png" alt="">
+			<img class="wave-2" src="dist/img/Mobile/WaveLayer/wave3.png" alt="">
+			<img class="wave-3" src="dist/img/Mobile/WaveLayer/wave2.png" alt="">
+			<img class="wave-4" src="dist/img/Mobile/WaveLayer/wave1.png" alt="">
+		</div>
+		<div class="layer">
+			<div class="desktop-cheeseboard">
+				<div class="cheese-container-desktop mozarella-container-desktop"></div>
+				<div class="cheese-container-desktop brie-container-desktop"></div>
+				<div class="cheese-container-desktop cheddar-container-desktop"></div>
+				<div class="cheese-container-desktop colby-container-desktop"></div>
+				<div class="cheese-container-desktop bleu-container-desktop"></div>
+			</div>
+		</div>
+		<div class="layer">
+			<h1 class="desktop-game-instrutions">Can you match the raining cheese to their names?</h1>
+		</div>
+		<div class="layer">
+			<div class="game-start-arrow"></div>
+		</div>
+		<div class="layer instruction-layer" data-depth="0.1">
+			<div class="instructions-white-bg">
+				<div class="instructions-blue-bg"></div>
+				<div class="instructions-cheese"></div>
+				<div class="instructions-hand"></div>
+				<div class="instructions-arrow"></div>
+				<div class="instructions-box"></div>
+				<p class="instructions-drag-text">Drag the cheese to its outline</p>
+				<p class="instructions-match-text">Match them all for a surprise!</p>
+			</div>
+		</div>
+
+		</div>
+		<div class="layer game-button-layer">
+			<div class="game-button">
+				<div class="start-button">
+					<p class="start-button-text">Start</p>
+				</div>
+				<div class="start-button-yellow"></div>
+			</div>
+			<div class="help-button-parent">
+				<div class="help-button"><span class="help-button-span">?</span></div>
+			</div>
+			<div class="overlay"></div>
+			<div class="company-logo2"></div>
+			<div class="winning-overlay">
+				<div class="cheese-slice-background"></div>
+				<h1 class="winning-message-desktop">Nice Job!</h1>
+				<div class="winning-form">
+					<h2>Thanks for playing! You're a cheesemaster.</h2>
+					<p>Redeem your complementary <a href="https://cheesemongerbox.com/">Cheesemonger Box</a> with the personalized code below:</p>
+				</div>
+
+				<div class="lower-cheese">
+					<div class="redeem-code-parent">
+						<div class="redeem-code">GRILLED54786</div>
+					</div>
+					<div class="winning-social-media">
+						<!-- <ul class="winning-social-media-icons">
+							<li><a href="https://www.facebook.com/cheesemongerbox/"><i class="fab fa-facebook"></i></a></li>
+						  	<li><a href="https://twitter.com/cheesemongerbox"><i class="fab fa-twitter"></i></a></li>
+						  	<li><a href="https://www.instagram.com/cheesemongerbox/"><i class="fab fa-instagram"></i></a></li>
+						</ul> -->
+					</div>
+				</div>
+			</div>
+			<div class="play-again-desktop">
+				<div class="play-again-desktop-button">Play Again!</div>
+			</div>
+		</div>
+		<div class="raining-cheeses">
+			<div class="flying-cheese mozarella" data-container-desktop=".mozarella-container-desktop"></div>
+			<div class="flying-cheese brie" data-container-desktop=".brie-container-desktop"></div>
+			<div class="flying-cheese cheddar" data-container-desktop=".cheddar-container-desktop"></div>
+			<div class="flying-cheese colby" data-container-desktop=".colby-container-desktop"></div>
+			<div class="flying-cheese bleu" data-container-desktop=".bleu-container-desktop"></div>
+		</div>
+	</section>
+
+	<section class="game-start" id="game-scene">
+		<div class="layer logo">
+			<div class="company-logo2"></div>
+		</div>
+		<div class="layer" data-depth="0.3">
+			<div class="town"></div>
+		</div>
+		<div class="layer" data-depth="0.3">
+			<img class="wave-1" src="dist/img/Mobile/WaveLayer/wave4.png" alt="">
+			<img class="wave-2" src="dist/img/Mobile/WaveLayer/wave3.png" alt="">
+			<img class="wave-3" src="dist/img/Mobile/WaveLayer/wave2.png" alt="">
+			<img class="wave-4" src="dist/img/Mobile/WaveLayer/wave1.png" alt="">
+		</div>
+		<div class="layer">
+			<div class="mouse"></div>
+		</div>
+		<div class="game-message">
+			<p class="game-message-start">Can you match the raining cheeses to their names?</p>
+			<p class="game-message-win">Nice Job!</p>
+		</div>
+
+		<div class="cheese-board">
+			<div class="cheese-container mozarella-container"></div>
+			<div class="cheese-container colby-container"></div>
+			<div class="cheese-container bleu-container"></div>
+			<div class="cheese-container brie-container"></div>
+			<div class="cheese-container cheddar-container"></div>
+		</div>
+
+		<div class="flying-cheese mozarella" data-container=".mozarella-container"></div>
+		<div class="flying-cheese brie" data-container=".brie-container"></div>
+		<div class="flying-cheese cheddar" data-container=".cheddar-container"></div>
+		<div class="flying-cheese colby" data-container=".colby-container"></div>
+		<div class="flying-cheese bleu" data-container=".bleu-container"></div>
+
+		<div class="game-button-win">
+			<div class="redeem-button">
+				<p class="redeem-button-text">Redeem</p>
+			</div>
+			<div class="redeem-button-yellow"></div>
+		</div>
+	</section>
+
+	<section class="game-end" id="end-scene">
+		<div class="end-layer logo">
+			<div class="company-logo2"></div>
+			<div class="end-layer blue-background"></div>
+			<p class="thank-you-message">Thanks for playing! You're a cheesemaster.</p>
+			<p class="redeem-message">Redeem your complementary <a href="https://cheesemongerbox.com/">Cheesemonger Box</a> with the personalized code below:</p>
+			<div class="redeem-code-parent">
+				<div class="redeem-code">GRILLED54786</div>
+			</div>
+			<div class="play-again-button-mobile">
+				<div class="play-again-button-dark">
+					<p class="play-again-button-text">Play Again</p>
+				</div>
+				<div class="play-again-button-yellow"></div>
+			</div>
+		</div>
+	</section>
+
+
+
+	
+
+		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous"></script>
+		<script src="src/js/parallax.js"></script>
+		<script src="vendor/gsap/minified/TweenMax.min.js"></script>
+		<script src="vendor/gsap/minified/plugins/DrawSVGPlugin.min.js"></script>
+		<script src="vendor/gsap/minified/utils/Draggable.min.js"></script>
 		<!-- <script src="dist/js/main.js"></script> -->
 		<script src="src/js/app.js"></script>
 

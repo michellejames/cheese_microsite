@@ -1,65 +1,1180 @@
-
-
-#scene {
+#scene,
+#game-scene,
+#end-scene {
 	width: 100%;
 	height: 100vh;
 	position: relative;
 	overflow: hidden;
+	pointer-events: all !important;
 
-	.layer {
+	.wave-layer {
+		margin-top: 1%;
+	}
+
+	.layer,
+	.game-layer,
+	.end-layer {
 		position: absolute;
-		width: 120vw;
-		height: 100vh;
+		width: 100%;
+		height: 100%;
 
-		&.background-layer {
-			// background-image: url(../../dist/img/background.png);
-			// background-repeat: no-repeat;
-			// background-size: cover;
-			// width: 100vw;
-			// height: 100vh;
+		.town {
+			background-image: url(../img/Mobile/mobile-town.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			width: 105vw;
+			// height: 75.41353383%;
+			height: 100%;
+			margin-left: -1%;
+
+			@media screen and (min-width: 600px){
+				margin-left: -1%;
+				background-size: cover;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/city.png);
+				height: 60%;
+				width: 102%;
+				bottom: 14%;
+			}
+		}
+
+		.city-bottom {
+			display: none;
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/city_bottom.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 1;
+				height: 26.201258%;
+				width: 105%;
+				bottom: 0;
+				margin-left: -1%;
+			}
+
+		}
+
+		.road {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/road.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 4;
+				height: 7.547169811%;
+				width: 105%;
+				bottom: 24.389937%;
+				margin-left: -1%;
+			}
+		}
+
+		.mouse {
+			display: block;
+			background-image: url(../img/Desktop_LayeredFiles/MiscPieces/mousecar2.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			position: absolute;
+			z-index: 4;
+			width: 20.2%;
+			height: 12.433962264%;
+			top: 57vh;
+			left: -20%;
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/MiscPieces/mousecar2.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				z-index: 4;
+				width: 13.2%;
+				height: 9.433962264%;
+				top: 65vh;
+
+			}
+		}
+
+		.desktop-cheeseboard {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CheeseBoard/cheeseboard_names.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				z-index: 4;
+				width: 40%;
+				height: 45%;
+				bottom: -15%;
+				right: -15%;
+
+				&.active {
+					background-image: url(../img/Desktop/CheeseBoard/cheeseboard_outline_placement.png);
+				}
+			}
+		}
+
+		.desktop-game-instrutions {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: block;
+				position: absolute;
+				color: #fff;
+				font-family: 'Southpark';
+				font-size: 1.2rem; 
+				width: 45%;
+				top: 85vh;
+				left: 17.4%;
+			}
+		}
+
+		.game-start-arrow {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/MiscPieces/game-start-arrow.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				z-index: 4;
+				width: 12.29796205%;
+				height: 5.660377358%;
+				bottom: 9%;
+				right: 26%;
+			}
+		}
+
+		.town-layer1 {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/cityinlayers1.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 500;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.town-layer2 {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/cityinlayers2.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 500;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.town-layer3 {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/cityinlayers3.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 2;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.town-layer4 {
+			display: none; 
+
+			@media screen and (min-width: 600px){
+				display: block;
+				background-image: url(../img/Desktop_LayeredFiles/CityLayers/cityinlayers4.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				position: absolute;
+				z-index: 1;
+				height: 100%;
+				width: 100%;
+			}
+		}
+
+		.low-opacity-town {
+			position: absolute;
+			z-index: 5;
+			bottom: 0;
+			width: 100%;
 		}
 
 		.wave-1 {
 			position: absolute;
-			bottom: 0;
-			// background-image: url(../../dist/img/Mobile/WaveLayer/wave4.png);
-			// background-repeat: no-repeat;
-			// background-size: cover;
+			z-index: 4;
+			bottom: -2%;
+			left: 50%;
+			transform: translate(-50%);
 			width: 120%;
-			// height: 0;
-			// padding-bottom: 6.766917293%;
+
+			@media screen and (min-width: 600px){
+				height: 20vh;
+				bottom: -5%;
+			}
 		}
 
-		&.wave-2 {
-			background-image: url(../../dist/img/Mobile/WaveLayer/wave3.png);
-			background-repeat: no-repeat;
-			background-size: cover;
+		.wave-2 {
+			position: absolute;
+			z-index: 3;
+			bottom: 1.759398496%;
+			left: 50%;
+			transform: translate(-50%);
 			width: 120%;
-			height: 0;
-			padding-bottom: 10.90225564%;
-			bottom: 3.759398496%;
+
+			@media screen and (min-width: 600px){
+				height: 20vh;
+				bottom: -1%;
+			}
 		}
 
-		&.wave-3 {
-			background-image: url(../../dist/img/Mobile/WaveLayer/wave2.png);
-			background-repeat: no-repeat;
-			background-size: cover;
+		.wave-3 {
+			position: absolute;
+			z-index: 2;
+			bottom: 8.30075188%;
+			left: 50%;
+			transform: translate(-50%);
 			width: 120%;
-			height: 0;
-			padding-bottom: 10.52631579%;
-			bottom: 10.30075188%;
+
+			@media screen and (min-width: 600px){
+				height: 20vh;
+				bottom: 3%;
+			}
 		}
 
-		&.wave-4 {
-			background-image: url(../../dist/img/Mobile/WaveLayer/wave1.png);
-			background-repeat: no-repeat;
-			background-size: cover;
+		.wave-4 {
+			position: absolute;
+			z-index: 1;
+			bottom: 14.2406015%;
+			left: 50%;
+			transform: translate(-50%);
 			width: 120%;
-			height: 0;
-			padding-bottom: 10.90225564%;
-			bottom: 16.2406015%;
+
+			@media screen and (min-width: 600px){
+				display: none;
+			}
+		}
+
+		.game-button {
+			width: 76%;
+			height: 8.270676692%;
+			position: absolute;
+			top: 85.71428571vh;
+			left: 50vw;
+			transform: translate(-50%, -50%);
+			max-width: 350px;
+
+			@media screen and (min-width: 600px){
+				top: 50vh;
+				left: 50vw;
+				max-width: 450px;
+			}
+			
+			.start-button {
+				background: #52768C;
+				border-radius: 15px;
+			    position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+
+				.start-button-text {
+					position: absolute;
+					top: 60%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					font-family: 'Southpark';
+					color: #fff;
+					font-size: 2.25rem;
+				}
+			}
+
+			.start-button-yellow {
+				background: #FEDD73;
+				border-radius: 15px;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 10.218045%;
+			}
+		}
+
+		.help-button {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				background-image: url(../img/questionmark-box.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				position: absolute;
+				width: 18.8%;
+				height: 10%;
+				// position: relative;
+				// width: 100%;
+				// height: 100%;
+			    top: 30px;
+		        right: 10px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+
+			    & span {
+				    // z-index: 9999;
+			    	color: #fff;
+			    	font-family: 'Southpark';
+			    	font-size: 2rem; 
+			    	padding-top: 10px;
+			    }
+			}
+		}
+
+		.cheese-in-game-end {
+			background-image: url(../img/Mobile/Mobile_Pieces/CheeseWheel_BlueShadow.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			position: absolute;
+			top: 45vh;
+			left: 50vw;
+			transform: translate(-50%, -50%);
+			width: 44%;
+		    height: 16.98113208%;
+		    z-index: 9998;
+			
+			.play-again-button {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: 'Southpark';
+				color: #fff;
+				font-size: 2.25rem;
+				text-align: center;
+				text-shadow: 0px 5px 0px rgba(37, 78, 106, 1);
+				z-index: 9999;
+			}
+		}
+
+		.overlay {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: none;
+				position: absolute;
+				background: #52768C;
+				width: 100%;
+				height: 100vh;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    opacity: 0.8;
+			}
+		}
+
+		.company-logo2 {
+			background-image: url(../img/Mobile/Mobile_Pieces/Blue_Logo.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			position: absolute;
+			z-index: 99999;
+			width: 25.33333333%;
+			height: 14.43609023%;
+			top: 2.55639098%;
+			left: 39.2%;
+
+			@media screen and (min-width: 600px){
+				width: 18.55345912%;
+				height: 18.86792453%;
+				top: 2.201257862%;
+				left: 0;
+			}
+		}
+		
+		.winning-overlay {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: none;
+				position: absolute;
+				width: 100%;
+				height: 100vh;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+
+			    .cheese-slice-background {
+			    	background-image: url(../img/cheese_plain.png);
+			    	background-repeat: no-repeat;
+			    	background-size: contain;
+			    	background-position: center;
+			    	position: absolute;
+			    	top: 50%;
+			    	left: 50%;
+			    	transform: translate(-50%, -50%);
+			    	width: 65.0035137%;
+			    	height: 80.44025157%;
+			    }
+
+			    .winning-message-desktop {
+			    	position: absolute;
+			    	top: 43%;
+			    	left: 59%;
+			    	transform: translate(-50%, -50%) rotate(-10deg);
+			    	font-family: 'Southpark';
+			    	color: #fff;
+			    	font-size: 3rem;
+			    	text-align: center;
+			    	text-shadow: 0px 5px 0px rgba(37, 78, 106, 1);
+
+			    	@media screen and (min-width: 900px) {
+			    		font-size: 4rem;
+			    		top: 40%;
+			    	}
+
+			    	@media screen and (min-width: 1200px) {
+			    		font-size: 5rem;
+			    		top: 38%;
+			    	}
+			    }
+
+			    .winning-form {
+		    		color: #A97527;
+		    		width: 43.78636683%;
+		    		font-family: 'KalraBold';
+		    		text-align: center;
+		    		position: absolute;
+		    		top: 53%;
+		    		left: 52%;
+		    		transform: translate(-50%, -50%) rotate(-7deg);
+
+		    		@media screen and (min-width: 900px) {
+		    			top: 55%;
+		    		}
+
+			    	h2 {
+			    		margin-bottom: 10px;
+
+			    		@media screen and (min-width: 900px) {
+							font-size: 1.2rem;
+			    		}
+			    	}
+
+			    	p {
+			    		font-size: .4rem;
+			    		color: #DAA42C;
+						font-family: 'KalraRegular';
+
+			    		@media screen and (min-width: 900px) {
+							font-size: 1rem;
+			    		}
+
+			    		a {
+			    			text-decoration: none;
+			    			color: #52768C;
+			    		}
+			    	}
+			    }
+
+			    .lower-cheese {
+			    	display: flex;
+			    	
+			    	.redeem-code-parent {
+			    		background-image: url(../img/dotted-line.png);
+			    		background-repeat: no-repeat;
+			    		background-size: contain;
+			    		background-position: center;
+			    		position: absolute;
+			    		top: 64%;
+			    		left: 50%;
+			    		transform: translate(-50%, -50%);
+			    		width: 25.43851%;
+			    		height: 18.735849%;
+			    		@media screen and (min-width: 900px) {
+			    			top: 67%;
+			    		}
+
+			    		@media screen and (min-width: 900px) {
+			    			top: 70%;
+			    		}
+
+				    	.redeem-code {
+				    		font-family: 'Southpark';
+				    		color: rgb(37, 78, 106);
+				    		background: #fff;
+				    		padding: 10px 10px;
+				    		border-radius: 5px;
+				    		font-size: .9rem;
+				    		position: absolute;
+				    		top: 50%;
+				    		left: 50%;
+				    		transform: translate(-50%, -50%) rotate(-7deg);	
+
+				    		@media screen and (min-width: 900px) {
+				    			font-size: 1.5rem;
+				    		}
+
+				    		@media screen and (min-width: 1200px) {
+				    			font-size: 2rem;
+				    		}
+				    	}
+
+				    	.redeem-code-background {
+				    		font-family: 'Southpark';
+				    		font-size: .9rem;
+				    		color: transparent;
+				    		background: transparent;
+				    		border: 2px dotted #A97527;
+				    		padding: 15px 10px;
+				    		border-radius: 5px;
+				    		position: absolute;
+				    		top: 50%;
+				    		left: 50%;
+				    		transform: translate(-50%, -50%);	
+				    	}
+			    	}
+
+			    	.winning-social-media {
+			    		background-image: url(../img/social_icons.png);
+			    		background-repeat: no-repeat;
+			    		background-size: contain;
+			    		background-position: center;
+			    		position: absolute;
+			    		top: 61%;
+			    		left: 73%;
+			    		transform: translate(-50%, -50%);
+			    		width: 7.43851%;
+			    		height: 8.735849%;
+
+			    		@media screen and (min-width: 900px) {
+			    			top: 63%;
+			    			left: 70%;
+
+			    		}
+			    	}
+
+			    }
+			}
+		}
+
+		.play-again-desktop {
+			display: none;
+
+			@media screen and (min-width: 600px) {
+				display: none;
+				position: absolute;
+				top: 85%;
+				right: 10%;
+				transform: rotate(-7deg);
+
+				.play-again-desktop-button {
+					color: #fff;
+					font-size: 2rem;
+					background: #A97527;
+					padding: 10px 20px;
+					font-family: 'Southpark';
+					border-radius: 10px;
+				}
+			}
+		}
+	}
+
+
+	// .game-button-layer {
+	// 	z-index: 1000;
+	// 	width: 76.26666667vw;
+	// 	height: 7.518796992vh;
+	// }
+
+	.instruction-layer {
+		width: 70.8vw;
+	    height: 43vh;
+	}
+
+	.help-layer {
+		z-index: 999;
+		width: 5.714286vw;
+		height: 9.433962264vh;
+	}
+
+	// .play-again-layer {
+	// 	width: 53.733333%;
+	//     height: 26.548872%;	
+	// }
+}
+
+
+.game-message {
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+	height: 15.71428571%;
+	top: 20.67669173%;
+	background: #E0832F;
+
+	.game-message-start {
+		position: absolute;
+		width: 70%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Southpark';
+		color: #fff;
+		font-size: 1.25rem;
+		text-align: center;
+		line-height: 25px;
+	}
+
+	@media screen and (min-width: 600px) {
+		display: none;
+	}
+
+	.game-message-win {
+		position: absolute;
+		width: 80%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Southpark';
+		color: #fff;
+		font-size: 3rem;
+		text-align: center;
+		text-shadow: 0px 5px 0px rgba(37, 78, 106, 1);
+		display: none;
+	}
+}
+
+.cheese-board {
+	background-image: url(../img/Desktop/CheeseBoard/cheeseboard_names.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	position: absolute;
+	width: 90%;
+	height: 33.08270677%;
+	top: 75%;
+	left: 50%;
+	max-width: 670px;
+	max-height: 430px;
+	transform: translate(-50%, -50%);
+
+}
+
+.cheese-board-finished {
+	background-image: url(../img/Desktop/CheeseBoard/cheeseboard_outline_placement.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	position: absolute;
+	width: 92.8%;
+	height: 33.08270677%;
+	bottom: 8.872180451%;
+	left: 4.666666667%;
+}
+
+//Logo after loading screen
+.logo {
+	z-index: 5;
+}
+
+.low-opacity-city {
+	z-index: 0;
+}
+
+.game-setup {
+	display: none;
+
+	.instructions-white-bg {
+		background-image: url(../img/torn_paper2.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: relative;
+		width: 100%;
+	    height: 100%;
+	    max-width: 295px;
+	    max-height: 310px;
+	    top: 40vh;
+	    left: 50vw;
+	    transform: translate(-50%, -50%);
+
+	    @media screen and (min-width: 600px) {
+	    	display: none;
+	    	top: 65%;
+	    	left: 113%;
+
+	    	&.active {
+	    		display: block;
+	    	}
+	    }
+
+	    .instructions-blue-bg {
+	    	background-image: url(../img/Rectangle1.png);
+	    	background-repeat: no-repeat;
+	    	background-size: contain;
+	    	background-position: center;
+	    	position: absolute;
+	    	width: 80.8%;
+    	    height: 87%;
+	    	max-width: 340px;
+	        max-height: 380px;
+    	    top: 50%;
+    	    left: 52%;
+    	    transform: translate(-50%, -50%);  	    
+	    }
+	    .instructions-cheese {
+	    	background-image: url(../img/cheese.png);
+	    	background-repeat: no-repeat;
+	    	background-size: contain;
+	    	background-position: center;
+	    	position: absolute;
+	    	width: 20%;
+    	    height: 20%;
+    	    max-width: 60px;
+    	    max-height: 55px;
+    	    top: 45px;
+    	    left: 100px;
+	    }
+
+	    .instructions-hand {
+	    	background-image: url(../img/hand.png);
+	    	background-repeat: no-repeat;
+	    	background-size: contain;
+	    	background-position: right;
+	    	position: absolute;
+	    	width: 29.8%;
+	    	height: 26%;
+    	    max-width: 60px;
+    	    max-height: 70px;
+    	    top: 75px;
+    	    left: 60px;
+	    }
+
+	    .instructions-arrow {
+	    	background-image: url(../img/arrow.png);
+	    	background-repeat: no-repeat;
+	    	background-size: contain;
+	    	background-position: center;
+	    	position: absolute;
+	    	width: 16.8%;
+    	    height: 18%;
+    	    max-width: 40px;
+    	    max-height: 45px;
+    	    top: 115px;
+    	    left: 130px;
+	    }
+
+	    .instructions-box {
+			background-image: url(../img/dotted-box.png);
+	    	background-repeat: no-repeat;
+	    	background-size: contain;
+	    	background-position: center;
+	    	position: absolute;
+	    	width: 30.8%;
+    	    height: 27%;
+    	    max-width: 85px;
+    	    max-height: 70px;
+    	    top: 160px;
+    	    left: 160px;	  	
+	    }
+
+	    .instructions-drag-text {
+	    	position: absolute;
+	    	top: 28%;
+    	    left: 47%;
+    	    text-align: center;
+    	    font-family: 'Southpark';
+    	    color: #fff;
+    	    font-size: 0.8rem;
+    	    width: 90px;
+    	    top: 80px;
+    	    left: 160px;
+    	    line-height: 17px;
+	    }
+
+	    .instructions-match-text {
+	    	position: absolute;
+	    	top: 65%;
+    	    left: 5%;
+    	    text-align: center;
+    	    font-family: 'Southpark';
+    	    color: #fff;
+    	    font-size: 0.8rem;
+    	    width: 90px;
+    	    top: 170px;
+	        left: 60px;
+	        line-height: 17px;
+
+	    }
+	}
+}
+
+.game-start {
+	display: none;
+	position: absolute;
+
+	.game-button-win {
+		display: none;
+		
+		.redeem-button {
+			position: absolute;
+			z-index: 1030;
+			width: 76.26666667%;
+			background: #52768C;
+			height: 7.518796992%;
+			bottom: 14.28571429%;
+			left: 12%;
+			border-radius: 15px;
+
+			.redeem-button-text {
+				position: absolute;
+				top: 60%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: 'Southpark';
+				color: #fff;
+				font-size: 2.25rem;
+			}
+		}
+
+		.redeem-button-yellow {
+			position: absolute;
+			z-index: 1;
+			width: 76.26666667%;
+			background: #FEDD73;
+			height: 7.518796992%;
+			bottom: 12.78195489%;
+			left: 12%;
+			border-radius: 15px;
 		}
 	}
 }
+
+.game-end {
+	position: absolute !important;
+	top: 0;
+	left: 110%;
+	display: none;
+	z-index: 9999;
+
+	.blue-background {
+		background: #7f9aaa;
+	}
+
+	.thank-you-message {
+		width: 80%;
+		color: #335b76;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'KalraBold';
+		font-size: 1.25rem;
+		text-align: center;
+		top: 26.69172932%;
+	}
+
+	.redeem-message {
+		width: 80%;
+		color: #335b76;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'KalraRegular';
+		font-size: 1.25rem;
+		text-align: center;
+		top: 40%;
+
+		a {
+			text-decoration: none;
+			color: #DAA42C;
+		}
+
+	}
+
+	.redeem-code-parent {
+		background-image: url(../img/dotted-line.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		top: 58%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80.43851%;
+	    height: 18.735849%;
+		z-index: 10;
+
+		@media screen and (min-width: 900px) {
+			top: 67%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			top: 70%;
+		}
+
+    	.redeem-code {
+    		font-family: 'Southpark';
+    		color: rgb(37, 78, 106);
+    		background: #fff;
+    		padding: 10px 10px;
+    		border-radius: 5px;
+    		font-size: 2rem;
+    		position: absolute;
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%, -50%) rotate(-7deg);	
+
+    		@media screen and (min-width: 900px) {
+    			font-size: 1.5rem;
+    		}
+
+    		@media screen and (min-width: 1200px) {
+    			font-size: 2rem;
+    		}
+    	}
+	}
+
+	.play-again-button-mobile {
+		width: 76%;
+		height: 8.270676692%;
+		position: absolute;
+		top: 85.71428571vh;
+		left: 50vw;
+		transform: translate(-50%, -50%);
+		max-width: 350px;
+		z-index: 10;
+		
+		.play-again-button-dark {
+			background: #52768C;
+			border-radius: 15px;
+		    position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 5;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.play-again-button-text {
+				font-family: 'Southpark';
+				color: #fff;
+				font-size: 2.25rem;
+			}
+		}
+
+		.play-again-button-yellow {
+			background: #FEDD73;
+			border-radius: 15px;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 10.218045%;
+		}
+	}
+
+	.share-game {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		z-index: 2;
+		width: 100%;
+		
+		//height: 10.120300752%;
+		top: 65.10526316%;
+
+		.share-game-text {
+			background: #335b76;
+			position: absolute;
+			width: 100%;
+			padding: 2.5% 5%;
+			padding-bottom: 3%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-family: 'Southpark';
+			color: #fff;
+			font-size: 0.7rem;
+			text-align: center;
+			line-height: 25px;
+			display: flex;
+			align-items: center;
+
+			.machtarella-logo {
+				background-image: url(../img/Mobile/Mobile_Pieces/macharella-logo-mini.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: bottom;
+				width: 30%;
+				height: 5vh;
+				display: inline-block;
+				margin: 0 1vw;
+			}
+		}
+	}
+
+	.social-media{
+		position: absolute;
+		z-index: 9999;
+		top: 80.31578947%;
+		display: flex;
+		width: 57.33333333%;
+		height: 100%;
+		left: 21.33333334%;
+		display: flex;
+		justify-content: space-between;
+		//align-items: center;
+		li {
+			a {
+				svg {
+					//position: absolute;
+					font-size: 3rem;
+					color: #335b76;
+					transition: .2s all;
+
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+.flying-cheese {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	position: absolute;
+	width: 19.8%;
+    height: 10.082707%;
+    z-index: 100;
+
+    @media screen and (min-width: 600px) {
+        // width: 11%;
+        // height: 7%;
+    }
+}
+
+.mozarella {
+	background-image: url(../img/Desktop/CheeseRain/cheesepieces_0004_moz.png);
+}
+
+.brie {
+	background-image: url(../img/Desktop/CheeseRain/cheesepieces_0001_brie.png);
+}
+
+.cheddar {
+	background-image: url(../img/Desktop/CheeseRain/cheesepieces_0002_cheddar.png);
+}
+
+.colby {
+	background-image: url(../img/Desktop/CheeseRain/cheesepieces_0003_colby.png);
+
+	@media screen and (min-width: 600px) {
+        // width: 13%;
+        // height: 10%;
+    }
+}
+
+.bleu {
+	background-image: url(../img/Desktop/CheeseRain/cheesepieces_0005_bleu.png);
+}
+
+.mozarella-container,
+.mozarella-container-desktop{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	// border: 2px solid red;
+    top: 23%;
+    left: 52%;
+}
+
+.brie-container,
+.brie-container-desktop{
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    // border: 2px solid blue;
+    top: 45%;
+    left: 45%;
+}
+
+.cheddar-container,
+.cheddar-container-desktop{
+	 width: 60px;
+	 height: 20px;
+	 position: absolute;
+	 // border: 2px solid green;
+	 top: 60%;
+     left: 52%;
+	 transform: rotate(-25deg);
+}
+
+.colby-container,
+.colby-container-desktop{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    // border: 2px solid purple;
+    top: 48%;
+    left: 26%;
+}
+
+.bleu-container,
+.bleu-container-desktop{
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    // border: 2px solid pink;
+    top: 33%;
+    left: 72%;
+}
+
+
+.raining-cheeses {
+	display: none;
+}
+
+
+
+
+
 
 

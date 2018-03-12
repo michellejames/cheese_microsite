@@ -19,10 +19,20 @@ $orange: #ED8B32;
   src: url('../../dist/fonts/south-park.ttf')  format('truetype'),
 }
 
+@font-face {
+  font-family: 'KalraBold';
+  src: url('../../dist/fonts/KarlaBold.ttf')  format('truetype'),
+}
+
+@font-face {
+  font-family: 'KalraRegular';
+  src: url('../../dist/fonts/KarlaRegular.ttf')  format('truetype'),
+}
+
 @import 'reset';
+@import "clouds";
 @import "loading";
 @import "page2";
-
 
 
 /* 1. Main Layout ================================= */
@@ -34,86 +44,102 @@ $orange: #ED8B32;
 body {
 	width: 100vw;
 	height: 100vh;
-	background-image: url(../../dist/img/background.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../img/background.png);
 	overflow: hidden;
 }
 
-.title {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	width: 80%;
-	height: 56.01503759%;
-	margin-top: 16.39097744%;
-	margin-left: 8.133333333%;
+.loading-screen {
 
-	.combined-logo {
+	.title {
+		display: flex;
+		flex-direction: column;
 
-		width: 80%;
-		height: 35.93984962%;
-		position: relative;
-
-		.cheese-logo {
-			background-image: url(../../dist/img/Mobile/Mobile_Pieces/CheeseWheel_BlueShadow.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-			//position: absolute;
-			//top: 18.19548872%;
-			//left: 11.46666667%;
-			//width: 40%;
-			width: 49.66666667%;
-			height: 0;
-			//padding-bottom: 19.54887218%;
-			padding-bottom: 19.32330827%;
-		}
-
-		.word-logo {
-			background-image: url(../../dist/img/Desktop/MiscPieces/matcharella_large.png);
-			background-repeat: no-repeat;
-			background-size: cover;
-			position: absolute;
-			z-index: 5;
-			// top: 18.87218045%;
-			// left: 21.33333333%;
-			//width: 66.66666667%;
-			left: 15%;
-			bottom: 0;
-			width: 84.83333333%;
-			height: 0;
-			//padding-bottom: 33.83458647%;
-			//padding-bottom: 56.834586%;
-			padding-bottom: 95.16806723%;
-			transform: rotate(-15deg);
+		@media screen and (min-width: 600px) {
+			flex-direction: row;
 		}
 	}
 
+	.cheese-logo {
+		background-image: url(../img/Mobile/Mobile_Pieces/CheeseWheel_BlueShadow.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		top: 18.19548872%;
+		left: 11.46666667%;
+		width: 39.73333333%;
+		height: 19.54887218%;
+
+		@media screen and (min-width: 600px) {
+			// width: 11.71303075%;
+			// height: 21.484375%;
+			// transform: rotate(40deg);
+			// top: 27.99479167%;
+			// left: 20.86383602%;
+
+			width: 16.713031%;
+		    height: 24.484375%;
+		    transform: rotate(40deg);
+		    top: 24.994792%;
+		    left: 15.863836%;
+		}
+	}
+
+	.word-logo {
+		background-image: url(../img/Desktop/MiscPieces/matcharella_large.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		z-index: 5;
+		top: 18.87218045%;
+		left: 21.33333333%;
+		width: 66.66666667%;
+		height: 33.83458647%;
+		transform: rotate(-15deg);
+
+		@media screen and (min-width: 600px) {
+			width: 20.86383602%;
+			height: 33.203125%;
+			top: 29.94791667%;
+			left: 23.42606149%;
+		}
+	}
 
 	.from {
-		//position: absolute;
+		position: absolute;
 		font-family: 'Southpark';
 		//font-size: 2.25rem;
 		font-size: 1.25rem;
 		color: $blue;
-		//text-align: center;
-		//top: 53.60902256%;
-		//left: 50%;
-		//transform: translate(-50%, -50%);
+		text-align: center;
+		top: 54.60902256%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		@media screen and (min-width: 600px) {
+			top: 45%;
+			font-size: 1.85rem;
+		}
 	}
 
 	.company-logo {
-		background-image: url(../../dist/img/Mobile/Mobile_Pieces/Blue_Logo.png);
+		background-image: url(../img/Mobile/Mobile_Pieces/Blue_Logo.png);
 		background-repeat: no-repeat;
-		background-size: cover;
-		//position: absolute;
-		//top: 57.7443609%;
-		//left: 37.86666667%;
+		background-size: contain;
+		background-position: center;
+		position: absolute;
+		top: 57.7443609%;
+		left: 37.86666667%;
 		width: 26%;
-		height: 0;
-		//padding-bottom: 14.66165414%;
-		padding-bottom: 26.161654%;
+		height: 14.66165414%;
+
+		@media screen and (min-width: 600px) {
+			width: 13.90922401%;
+			height: 24.73958333%;
+			top: 32.55208333%;
+			left: 56.00292826%;
+		}
 	}
 }
 
@@ -130,106 +156,6 @@ body {
 
 
 
-.cloud {
-	position: absolute;
-	width: 23.6%;
-	height: 0;
-	//padding-bottom: 3.383458647%;
-	padding-bottom: 8.383459%;
-	border-radius: 20px;
-	background: linear-gradient(to bottom, rgba(255, 255 ,255, 1), rgba(255,255, 255, 0));
-}
-
-.cloud1 {
-	width: 23.6%;
-	top: 5%;
-	left: 93%;
-}
-
-.cloud2 {
-	width: 13.6%;
-	top: 7%;
-	left: 95%;
-}
-
-.cloud3 {
-	width: 33.6%;
-	top: 10%;
-	left: 90%;
-}
-
-.cloud4 {
-	width: 23.6%;
-	top: 14%;
-	left: 93%;
-}
-
-.cloud5 {
-	width: 23.6%;
-	top: 21%;
-	left: 9%;
-}
-
-.cloud6 {
-	width: 33.6%;
-	top: 24%;
-	left: -2%;
-}
-
-.cloud7 {
-	width: 23.6%;
-	top: 21%;
-	left: 9%;
-}
-
-.cloud8 {
-	width: 23.6%;
-    top: 27%;
-    left: 56%;
-}
-
-.cloud9 {
-	width: 27.6%;
-    top: 29%;
-    left: 65%;
-}
-
-.cloud10 {
-	width: 27.6%;
-    top: 41%;
-    left: 29%;
-}
-
-.cloud11 {
-	width: 37.6%;
-	top: 44.3%;
-	left: 22%;
-}
-
-.cloud12 {
-	width: 19.6%;
-    top: 49%;
-    left: 28%;
-    padding-bottom: 6%;
-}
-
-.cloud13 {
-	width: 19.6%;
-    top: 57%;
-    left: -6%;
-}
-
-.cloud14 {
-	width: 27.6%;
-    top: 59%;
-    left: -6%;
-}
-
-.cloud15 {
-	width: 19.6%;
-    top: 60%;
-    left: -9%;
-}
 
 
 

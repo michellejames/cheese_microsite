@@ -31,7 +31,7 @@ gulp.task('js', function () {
 	return gulp.src('./src/js/**/*.js') // watch these files
 		.pipe(sourcemaps.init()) // make sourcemaps for chrome devtools
 		.pipe(jshint(".jshintrc")) // error check the files
-		.pipe(jshint.reporter('jshint-stylish', {beep: true})) // if there are errors, show them
+		.pipe(jshint.reporter('jshint-stylish', {beep: false})) // if there are errors, show them
 		.pipe(babel({ // run the js through babel to convert ES6 to ES5
             presets: ['env']
 		}))
