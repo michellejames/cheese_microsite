@@ -56,14 +56,22 @@ gameStartButton.onclick = function () {
 	}
 }
 
-document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
+// document.querySelectorAll(".flying-cheese").forEach(dragCheese($cheese));
+for (var i = 0; i < document.querySelectorAll(".flying-cheese").length; i++) {
+	dragCheese(document.querySelectorAll(".flying-cheese")[i]);
+}
+function dragCheese(cheese) {
+	cheese.classList.remove("paired");
+	let cheeseBoardDesktop =  document.querySelector(".desktop-cheeseboard");
+	cheeseBoardDesktop.classList.remove("active");
+	cheeseBoardTimeline.restart();
 
 	let dropFinals = document.querySelectorAll(".cheese-container");
 	let overlapThreshold = "50%"; 
-	let $container = document.querySelector( $cheese.getAttribute("data-container") );
-	let $containerDesktop = document.querySelector( $cheese.getAttribute("data-container-desktop") );
+	let $container = document.querySelector( cheese.getAttribute("data-container") );
+	let $containerDesktop = document.querySelector( cheese.getAttribute("data-container-desktop") );
 
-	let animation = TweenMax.fromTo($cheese, 7, {
+	let animation = TweenMax.fromTo(cheese, 7, {
 		left: (Math.floor(Math.random() * 90) + 1)+ "vw", 
 		top: "-5%", 
 		repeat: -1
@@ -73,7 +81,7 @@ document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
 		ease: Linear.easeNone
 	});
 
-	Draggable.create($cheese, {
+	Draggable.create(cheese, {
 		onDrag: function() {
 			console.log("onDrag");
 			animation.pause();
@@ -86,7 +94,7 @@ document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
 					console.log("it worked", this);
 					this.kill();
 					animation.kill();
-					$cheese.classList.add("paired");
+					cheese.classList.add("paired");
 				} else {
 					animation.resume()
 				}
@@ -95,7 +103,7 @@ document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
 					console.log("it worked", this);
 					this.kill();
 					animation.kill();
-					$cheese.classList.add("paired");
+					cheese.classList.add("paired");
 				} else {
 					animation.resume()
 				}
@@ -118,11 +126,6 @@ document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
 					TweenMax.to(".winning-overlay", 0.5, {display: "block"});
 					TweenMax.to(".play-again-desktop", 0.5, {display: "block"});
 
-					let playAgainButtonDesktop = document.querySelector(".play-again-desktop");
-					playAgainButtonDesktop.onclick = function () {
-						location.reload();
-					}
-
 				} else {
 
 					let timelineGameEnd = new TimelineMax();
@@ -138,55 +141,34 @@ document.querySelectorAll(".flying-cheese").forEach(function($cheese) {
 						timelineAfterGame.to(".game-start", 1, {left: "-100%", top: "0%", display: "none"}, "slide-together");
 						timelineAfterGame.fromTo(".game-end", 1, {left: "100%"}, {left: 0, top: 0, display: "block"}, "slide-together");
 					}
-
-					let playAgainButtonMobile = document.querySelector(".play-again-button-mobile");
-					playAgainButtonMobile.onclick = function () {
-						console.log('game ended');
-						location.reload();
-					}
 				}
 			}
 		}
 	})
-})
+}
+let playAgainButtonDesktop = document.querySelector(".play-again-desktop");
+playAgainButtonDesktop.onclick = function () {
+	let cheese = document.querySelectorAll(".flying-cheese");
+	for (var i = 0; i < cheese.length; i++) {
+		dragCheese(cheese[i]);
+	}
+	TweenMax.to(".raining-cheeses", 0.1, {display: "block"});
+	TweenMax.to(".overlay", 0.1, {display: "none"});
+	TweenMax.to(".winning-overlay", 0.5, {display: "none"});
+	TweenMax.to(".play-again-desktop", 0.5, {display: "none"});
+}
+
+let playAgainButtonMobile = document.querySelector(".play-again-button-mobile");
+playAgainButtonMobile.onclick = function () {
+	let cheese = document.querySelectorAll(".flying-cheese");
+	for (var i = 0; i < cheese.length; i++) {
+		dragCheese(cheese[i]);
+	}
 
 
-// let flyingCheese = document.querySelector(".flying-cheese");
-// flyingCheese.style.top = "-10px";
-// flyingCheese.style.left = Math.random()* window.innerWidth+"px";
-
-// let speed = Math.random()*15+1;
-
-// let cheeseRain = function() {
-
-// 	// access the particle’s style.top and style.left and store them in new variables. remove the “px”
-// 	let styleLeft = parseFloat (flyingCheese.style.left);
-// 	let styleTop = parseFloat (flyingCheese.style.top);
-
-// 	// subtract (speed * 0.2) from the left value
-
-// 	styleLeft = styleLeft - (speed*0.2);
-
-// 	// add speed to the top value
-
-// 	styleTop = styleTop + speed;
-
-// 	// if the top value is greater than 400, set it to -10
-// 	if (styleTop > window.innerHeight){
-// 		styleTop = -10;
-// 		styleLeft = Math.random()*window.innerWidth;
-// 	}
-	
-// 	// set the style.top and style.left to the modified values, adding “px” to the ends
-// 	flyingCheese.style.top = styleTop+"px";
-// 	flyingCheese.style.left = styleLeft+"px";
-
-// }
-// // set an interval to call moveParticle every 33ms
-// setInterval(cheeseRain, 33);
-
-// cheeseRain();
-
-
-
-
+	TweenMax.to(".game-end", 0.5, {display: "none"});
+	TweenMax.to(".game-message", 0.5, {display: "none"});
+	TweenMax.to(".game-message-win", 0.5, {display: "none"});
+	TweenMax.to(".game-button-win", 0.5, {display: "none"});
+	TweenMax.to(".game-start", 1, {left: "0%", display: "block"});	
+}
