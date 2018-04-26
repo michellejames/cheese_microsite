@@ -1,7 +1,7 @@
 {
-  "name": "circus-starter",
+  "name": "Cheesemonger Box Game",
   "version": "1.2.3",
-  "description": "A good starting point for new Circus students",
+  "description": "A fun game called “Match-a-Rella” accompanying the “Cheesemonger Box” brand. Cheesemonger Box is a subscription box service that curates small batch artisan and traditional cheeses and delivers them to your door. The game is part of a special promotion and results in a one time free Cheesemonger Box.",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -20,15 +20,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chrissilich/circus-starter.git"
-  },
-  "author": "Chris Silich",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chrissilich/circus-starter/issues"
-  },
-  "homepage": "https://github.com/chrissilich/circus-starter#readme",
+  "author": "@webDevShelly <webDevShelly@gmail.com>",
   "babel": {}
 }
